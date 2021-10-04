@@ -61,7 +61,7 @@ The CDC data also contains the death count of different diseases. Here are the d
         labels: labels,
         datasets: [{
           label: 'Death Toll',
-          backgroundColor: ['rgb(255, 159, 64)','rgb(255, 159, 64)','rgb(255, 159, 64)', 'rgb(255, 99, 132)'],
+          backgroundColor: ['rgb(255, 159, 64)'],
           data: [2813503, 2839205, 2854838, 3358814],
         }],
       };
