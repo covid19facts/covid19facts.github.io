@@ -2,122 +2,80 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Q: Is COVID-19 just a bad flu?
 
-[Link to another page](./another-page.html).
+Since the COVID-19 death cases are still controversial sometimes, we would only inspect the question based on the death toll of the country. Generally speaking, the verification of death is much straight forward.
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+This includes the deaths caused by all reasons, e.g. heart attack, cancer, influenza or even car accidents. So this number won't try to differentiate the deaths caused by COVID19 or not.
 
 
-### Definition lists can be used with HTML syntax.
+|| 2017 | 2018 | 2019 | 2020 |
+|:-----|:-----|:-----|:-----|:-----|
+|Death Toll|2,813,503|2,839,205|2,854,838|<strong>3,358,814</strong>|
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+<div>
+  <canvas id="myChart"></canvas>
+</div>
 
-```
-The final element.
-```
+
+
+The charts <strong>begin from zero</strong>.
+
+So, based on the statistics alone, we may conclude that somethings did happen in 2020 that caused significant increase of death toll. Some thing so big that's highly unlikely to be totally ignored by the media.
+
+
+As a matter of fact, CDC also provided [detailed information of death cases by flu](./death-by-flu.html).
+
+## Death by Flu
+
+The CDC data also contains the death count of different diseases. Here are the death count of each year for all causes vs influenza.
+
+|| 2017 | 2018 | 2019 | 2020 |
+|:-----|:-----|:-----|:-----|:-----|
+|Deaths per 100,000 population|731.9|723.6|715.2|<strong>828.7</strong>|
+|Deaths due to influenza and pneumonia per 100,000 population|14.3|14.9|12.3||
+
+
+## References:
+[CDC: Mortality in the United States, 2017](https://www.cdc.gov/nchs/products/databriefs/db328.htm)<br/>
+[CDC: Mortality in the United States, 2018](https://www.cdc.gov/nchs/products/databriefs/db355.htm)<br/>
+[CDC: Mortality in the United States, 2019](https://www.cdc.gov/nchs/products/databriefs/db395.htm)<br/>
+[CDC: Provisional Mortality Data — United States, 2020](https://www.cdc.gov/mmwr/volumes/70/wr/mm7014e1.htm)
+
+
+
+  <script>
+
+
+    $(document).ready(function(){
+
+      const labels = [
+        '2017',
+        '2018',
+        '2019',
+        '2020',
+      ];
+
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'Death Toll',
+          backgroundColor: ['rgb(255, 159, 64)','rgb(255, 159, 64)','rgb(255, 159, 64)', 'rgb(255, 99, 132)'],
+          data: [2813503, 2839205, 2854838, 3358814],
+        }],
+      };
+      
+      const config = {
+        type: 'bar',
+        data: data,
+      };
+
+      var myChart = new Chart(
+          document.getElementById('myChart'),
+          config,
+	  	
+        );
+    });
+
+  </script>

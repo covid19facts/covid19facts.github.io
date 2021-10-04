@@ -2,3 +2,48 @@
 ---
 
 @import "jekyll-theme-time-machine";
+
+.download-bar {
+	display: none;
+}
+
+.current-section {
+	display: none;
+}
+
+.tagline {
+	display: none;
+}
+
+body #main {
+	padding-bottom: 20px;
+}
+
+
+body #container {
+	background-image: none;
+	background-color: white;
+	margin-bottom: 30px;
+}
+
+/*
+h1.title {
+	font-size: 55px;
+}
+*/
+
+a, a:visited, a:hover {
+	color: rgb(0, 92, 197)
+}
+
+footer {
+	margin-top: 50px;
+	margin-right: 10px;
+	font-family: Georgia, serif;
+	text-align: right;
+}
+
+
+.markdown-body td:first-child {
+	width: unset;
+}
