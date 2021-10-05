@@ -4,14 +4,12 @@ layout: default
 
 # Q: Is COVID-19 just a bad flu?
 
-Since the COVID-19 death cases are still controversial sometimes, we would only inspect the question based on the death toll of the country. Generally speaking, the verification of death is much straight forward.
-
-This includes the deaths caused by all reasons, e.g. heart attack, cancer, influenza or even car accidents. So this number won't try to differentiate the deaths caused by COVID19 or not.
+Here we inspect the question based on the <strong>overall death toll</strong> of United States. Generally speaking, the confirmation of death is quite straight forward. The numbers below include the deaths of all causes, i.e. heart attack, cancer, influenza, car accidents, etc.
 
 
-|| 2017 | 2018 | 2019 | 2020 |
-|:-----|:-----|:-----|:-----|:-----|
-|Death Toll|2,813,503|2,839,205|2,854,838|<strong>3,358,814</strong>|
+||2016| 2017 | 2018 | 2019 | 2020 |
+|:-----|:-----|:-----|:-----|:-----|:-----|
+|Death Toll|2,744,248|2,813,503|2,839,205|2,854,838|<strong>3,358,814</strong>|
 
 
 <div>
@@ -20,24 +18,30 @@ This includes the deaths caused by all reasons, e.g. heart attack, cancer, influ
 
 
 
-The charts <strong>begin from zero</strong>.
+Even when the numbers are big and y-axis begins from zero, one could easily notice the obvious uprise in 2020.
 
-So, based on the statistics alone, we may conclude that somethings did happen in 2020 that caused significant increase of death toll. Some thing so big that's highly unlikely to be totally ignored by the media.
+Based on the statistics alone, we may conclude that <strong>something deadly must have happened in 2020</strong>.
+
+<strong>Unless there are some hideous huge disasters that happened in 2020</strong>, which is overlooked by every one in the country, COVID19 related deaths would best match this number abnormality so far.
+
+<br/>
+## How About Flu
+
+CDC reports also provided detailed information of death cases by flu. Here are the <strong>death cases per 100,000 standard population</strong>, of each year for all causes vs influenza. 
 
 
-As a matter of fact, CDC also provided [detailed information of death cases by flu](./death-by-flu.html).
 
-## Death by Flu
-
-The CDC data also contains the death count of different diseases. Here are the death count of each year for all causes vs influenza.
-
-|| 2017 | 2018 | 2019 | 2020 |
+||2016| 2017 | 2018 | 2019 | 2020 |
 |:-----|:-----|:-----|:-----|:-----|
-|Deaths per 100,000 population|731.9|723.6|715.2|<strong>828.7</strong>|
-|Deaths due to influenza and pneumonia per 100,000 population|14.3|14.9|12.3||
+|Deaths per 100,000|728.8|731.9|723.6|715.2|<strong>828.7</strong>|
+|Deaths due to influenza and pneumonia per 100,000|13.5|14.3|14.9|12.3||
+
+Flu data of 2020 is not yet available. Yet, we could still see that, <strong>the flu related cases will hardly impact the total death toll in a significant way</strong>.
 
 
-## References:
+<br/>
+#### References:
+[CDC: Mortality in the United States, 2016](https://www.cdc.gov/nchs/products/databriefs/db293.htm)<br/>
 [CDC: Mortality in the United States, 2017](https://www.cdc.gov/nchs/products/databriefs/db328.htm)<br/>
 [CDC: Mortality in the United States, 2018](https://www.cdc.gov/nchs/products/databriefs/db355.htm)<br/>
 [CDC: Mortality in the United States, 2019](https://www.cdc.gov/nchs/products/databriefs/db395.htm)<br/>
@@ -51,6 +55,7 @@ The CDC data also contains the death count of different diseases. Here are the d
     $(document).ready(function(){
 
       const labels = [
+	'2016',
         '2017',
         '2018',
         '2019',
@@ -61,14 +66,19 @@ The CDC data also contains the death count of different diseases. Here are the d
         labels: labels,
         datasets: [{
           label: 'Death Toll',
-          backgroundColor: ['rgb(255, 159, 64)'],
-          data: [2813503, 2839205, 2854838, 3358814],
+          backgroundColor: ['rgb(255, 159, 64)', 'rgb(255, 159, 64)', 'rgb(255, 159, 64)', 'rgb(255, 159, 64)', 'rgb(255, 99, 132)'],
+          data: [2744248, 2813503, 2839205, 2854838, 3358814],
         }],
       };
       
       const config = {
         type: 'bar',
         data: data,
+	options: {
+		plugins: {
+			legend: false
+		}
+	}
       };
 
       var myChart = new Chart(
