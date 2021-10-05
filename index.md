@@ -13,7 +13,7 @@ Here we inspect the question based on the <strong>overall death toll</strong> of
 
 
 <div>
-  <canvas id="myChart"></canvas>
+  <canvas id="chart1"></canvas>
 </div>
 
 
@@ -36,6 +36,12 @@ CDC reports ([Source](#ref1)) also provided detailed information of death cases 
 |Deaths per 100,000|728.8|731.9|723.6|715.2|<strong>828.7</strong>|
 |Deaths due to influenza and pneumonia per 100,000|13.5|14.3|14.9|12.3||
 
+
+<div>
+  <canvas id="chart2"></canvas>
+</div>
+
+
 Flu data of 2020 is not yet available. Yet, we could still see that, <strong>the flu related cases will hardly impact the total death toll in a significant way</strong>.
 
 
@@ -55,6 +61,7 @@ Flu data of 2020 is not yet available. Yet, we could still see that, <strong>the
 
     $(document).ready(function(){
 
+	// set up of chart 1
       const labels = [
 	'2016',
         '2017',
@@ -63,7 +70,7 @@ Flu data of 2020 is not yet available. Yet, we could still see that, <strong>the
         '2020',
       ];
 
-      const data = {
+      var data = {
         labels: labels,
         datasets: [{
           label: 'Death Toll',
@@ -71,22 +78,44 @@ Flu data of 2020 is not yet available. Yet, we could still see that, <strong>the
           data: [2744248, 2813503, 2839205, 2854838, 3358814],
         }],
       };
+
       
-      const config = {
-        type: 'bar',
-        data: data,
-	options: {
-		plugins: {
-			legend: false
+      var myChart = new Chart(
+          document.getElementById('chart1'),
+          {
+		type: 'bar',
+		data: data,
+		options: {
+			plugins: {
+				legend: false
+			}
 		}
-	}
+	   }
+        );
+
+	// set up of chart 2
+	data = {
+        labels: labels,
+        datasets: [{
+          label: 'Deaths per 100,0000',
+          backgroundColor: 'rgba(255, 99, 132, 0.8)',
+          data: [728.8, 731.9, 723.6, 715.2, 828.7],
+        }, {
+          label: 'Deaths due to influenza and pneumonia per 100,000',
+          backgroundColor:'rgba(255, 206, 86, 0.8)',
+          data: [13.5, 14.3, 14.9, 12.3, ],		
+	}],
       };
 
-      var myChart = new Chart(
-          document.getElementById('myChart'),
-          config,
-	  	
+        var myChart = new Chart(
+          document.getElementById('chart2'),
+          {
+		type: 'bar',
+		data: data
+	   },  	
         );
+
+      
     });
 
   </script>
