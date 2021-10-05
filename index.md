@@ -4,7 +4,7 @@ layout: default
 
 # Q: Is COVID-19 just a bad flu?
 
-Here we inspect the question based on the <strong>overall death toll</strong> of United States. Generally speaking, the confirmation of death is quite straight forward. The numbers below include the deaths of all causes, i.e. heart attack, cancer, influenza, car accidents, etc.
+Here we inspect the question based on the <strong>overall death toll</strong> of United States ([Source](#ref1)). Generally speaking, the confirmation of death is quite straight forward. The numbers below include the deaths of all causes, i.e. heart attack, cancer, influenza, car accidents, etc.
 
 
 ||2016| 2017 | 2018 | 2019 | 2020 |
@@ -27,7 +27,7 @@ Based on the statistics alone, we may conclude that <strong>something deadly mus
 <br/>
 ## How About Flu
 
-CDC reports also provided detailed information of death cases by flu. Here are the <strong>death cases per 100,000 standard population</strong>, of each year for all causes vs influenza. 
+CDC reports ([Source](#ref1)) also provided detailed information of death cases by flu. Here are the <strong>death cases per 100,000 standard population</strong>, of each year for all causes vs influenza. 
 
 
 
@@ -40,6 +40,7 @@ Flu data of 2020 is not yet available. Yet, we could still see that, <strong>the
 
 
 <br/>
+<a id='ref1'></a>
 #### References:
 [CDC: Mortality in the United States, 2016](https://www.cdc.gov/nchs/products/databriefs/db293.htm)<br/>
 [CDC: Mortality in the United States, 2017](https://www.cdc.gov/nchs/products/databriefs/db328.htm)<br/>
